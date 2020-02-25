@@ -3,9 +3,22 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<form action="" method="POST">
+	<label for="LoanAmount">
+	  Loan amount: <input type="text", name="A", id="loanamount", placeholder="amount">
+	</label>
+	<br>
+	<label for="NumOfPayments">
+	  Number of periodic payments: <input type="text", name="n", id="numofpayments", placeholder="Number of periodic payments">
+	</label>
+	<br>
+	<label for="InterestRate">
+	  Periodic interest rate: <input type="text", name="i", id="interestrate", placeholder="periodic interest rate">
+	</label>
+	<br>
+	<input type="submit" value="Submit">
 
-	<h2> This is my Flask server! </h2>
-
-	<img src="{{ url_for('static', filename='images/flask.jpg') }}" />
+	<input type="reset" value="Reset">
+  </form>
 
 {% endblock %}

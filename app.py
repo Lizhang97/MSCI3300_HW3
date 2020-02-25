@@ -1,11 +1,19 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template, request
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def index():
-    return render_template('index.html', pageTitle='Flask Server Home Page')
+    if request.method=='POST':
+        form = request.form
+        a = float(form["A"])
+        n = float(form["n"])
+        i = float(form["i"])
+        df = (((1+i)**n)-1)/(i*(i+1)**n)
+        p = a/df
+        print(p)
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
