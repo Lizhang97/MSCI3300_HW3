@@ -12,7 +12,7 @@ def index():
         i = float(form["i"])
         df = (((1+i)**n)-1)/(i*(i+1)**n)
         p = a/df
-        print(p)
+        return render_template('index.html', display=p)
     return render_template('index.html')
 
 
