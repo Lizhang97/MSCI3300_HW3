@@ -11,8 +11,9 @@ def index():
         n = float(form["n"])
         i = float(form["i"])
         df = (((1+i)**n)-1)/(i*(i+1)**n)
-        p = a/df
-        return render_template('index.html', display=p)
+        p = round(a/df,2)
+        result=f'The monthly payment is ${p}.'
+        return render_template('index.html', display=result)
     return render_template('index.html')
 
 
